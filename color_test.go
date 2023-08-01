@@ -1,6 +1,7 @@
 package color_test
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/livebud/color"
@@ -19,4 +20,13 @@ func TestIgnore(t *testing.T) {
 	color := color.Ignore()
 	is.Equal(color.Blue("hello"), "hello")
 	is.Equal(color.Red("hello"), "hello")
+}
+
+func ExampleIgnore() {
+	color := color.Ignore()
+	fmt.Println(color.Blue("hello"))
+	fmt.Println(color.Red("hello"))
+	// Output:
+	// hello
+	// hello
 }
