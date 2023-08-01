@@ -4,6 +4,8 @@
 
 Minimal color package
 
+![color](https://github.com/livebud/color/assets/170299/333ea10c-d953-48eb-9071-b9fa069f2595)
+
 ## Features
 
 - Simple API
