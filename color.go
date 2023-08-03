@@ -2,14 +2,10 @@ package color
 
 import (
 	"fmt"
-	"os"
 )
 
-func Disabled() bool {
-	return os.Getenv("NO_COLOR") != ""
-}
-
 type Writer interface {
+	Enabled() bool
 	Blue(v ...interface{}) string
 	Red(v ...interface{}) string
 	Yellow(v ...interface{}) string
@@ -41,6 +37,10 @@ func format(color int, msg string) string {
 type writer struct{}
 
 var _ Writer = (*writer)(nil)
+
+func (w *writer) Enabled() bool {
+	return true
+}
 
 func (w *writer) Blue(v ...interface{}) string {
 	return format(blue, fmt.Sprint(v...))

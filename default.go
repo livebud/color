@@ -1,7 +1,9 @@
 package color
 
+import "os"
+
 func Default() Writer {
-	if Disabled() {
+	if os.Getenv("NO_COLOR") != "" {
 		return Ignore()
 	}
 	return New()

@@ -10,6 +10,10 @@ type ignore struct{}
 
 var _ Writer = (*ignore)(nil)
 
+func (i *ignore) Enabled() bool {
+	return false
+}
+
 func (i *ignore) Blue(v ...interface{}) string {
 	return fmt.Sprint(v...)
 }
